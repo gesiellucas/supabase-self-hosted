@@ -13,6 +13,8 @@ services:
     container_name: supabase-studio
     image: supabase/studio:2026.03.16-sha-5528817
     restart: unless-stopped
+    ports:
+      - "3000:3000"
     healthcheck:
       test:
         [
@@ -449,8 +451,8 @@ services:
     container_name: supabase-analytics
     image: supabase/logflare:1.31.2
     restart: unless-stopped
-    # ports:
-    #   - 4000:4000
+    ports:
+      - 4000:4000
     # Uncomment to use Big Query backend for analytics
     # volumes:
     #   - type: bind
